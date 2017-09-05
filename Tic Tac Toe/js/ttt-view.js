@@ -12,6 +12,9 @@ class View {
       let pos = $(event.currentTarget).data("pos");
       game.playMove(pos);
       this.makeMove($(event.currentTarget), game);
+      if (game.board.winner()) {
+        $(".ttt").append(`${game.currentPlayer.toUpperCase()} WINS!`);
+      }
       // event.currentTarget.css("background-color: green");
     });
   }
