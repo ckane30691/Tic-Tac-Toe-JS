@@ -9,18 +9,19 @@ ul {
   /*content: "";
   display: table;
   clear: both;*/
+  list-style-position:inside;
   display: block;
   width: 500px;
   white-space: nowrap;
 }
 
 li {
+  box-sizing: border-box;
   float: left;
   display: block;
   width: 200px;
   height: 200px;
-  border: 10px;
-  border-color: black;
+  border: 10px solid black;
   background-color: gray;
 }
 
