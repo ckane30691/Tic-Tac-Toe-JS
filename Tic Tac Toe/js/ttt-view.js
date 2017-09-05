@@ -11,14 +11,19 @@ class View {
     $(".cell").on("click", (event) => {
       let pos = $(event.currentTarget).data("pos");
       game.playMove(pos);
-      this.makeMove($(event.currentTarget));
+      this.makeMove($(event.currentTarget), game);
       // event.currentTarget.css("background-color: green");
     });
   }
 
-  makeMove($square) {
-    $square.removeClass("not_selected");
-    $square.toggleClass("selected_x");
+  makeMove($square, game) {
+    if (game.currentPlayer === "x") {
+      $square.removeClass("not_selected");
+      $square.toggleClass("selected_x");
+    } else {
+      $square.removeClass("not_selected");
+      $square.toggleClass("selected_o");
+    }
   }
 
   setupBoard($el) {
