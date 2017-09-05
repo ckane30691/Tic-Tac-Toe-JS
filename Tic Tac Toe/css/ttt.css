@@ -1,9 +1,24 @@
+.group:after {
+}
+
+.ttt {
+  width: 600px;
+}
+
 ul {
-  width: 500;
+  /*content: "";
+  display: table;
+  clear: both;*/
+  display: block;
+  width: 500px;
+  white-space: nowrap;
 }
 
 li {
   float: left;
+  display: block;
+  width: 200px;
+  height: 200px;
   border: 10px;
   border-color: black;
   background-color: gray;
