@@ -22,9 +22,26 @@ li {
   width: 200px;
   height: 200px;
   border: 10px solid black;
+}
+
+li:hover {
+  background-color: yellow;
+}
+
+.not_selected {
   background-color: gray;
 }
 
-.yellow {
-  background-color: yellow;
+.selected_x:before {
+  background-color: white;
+  content: "x";
+  font-size: 48;
+  color: red;
+}
+
+.selected_o {
+  background-color: white;
+  content: "o";
+  font-size: 48;
+  color: green;
 }
