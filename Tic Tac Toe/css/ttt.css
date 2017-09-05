@@ -1,0 +1,14 @@
+ul {
+  width: 500;
+}
+
+li {
+  float: left;
+  border: 10px;
+  border-color: black;
+  background-color: gray;
+}
+
+.yellow {
+  background-color: yellow;
+}

@@ -65,14 +65,48 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-const View = './ttt-view.js';
-const Game = // require appropriate file
+const View = __webpack_require__(1);
+const Game = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./game.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));// require appropriate file
 
 $( () => {
   // Your code here
+  let view = new View;
+  let game = new Game;
+  let $el = $('.ttt');
+
 });
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+class View {
+  constructor(game, $el) {
+    this.game = game;
+    this.$el = $el;
+
+    this.setupBoard();
+  }
+
+  bindEvents() {}
+
+  makeMove($square) {}
+
+  setupBoard() {
+    const board = this.$el.append($('<ul></ul>'));
+
+    for (var i = 0; i <= 3; i++) {
+      for (var j = 0; j < 3; j++) {
+        board.append('<li></li>');
+      }
+    }
+  }
+}
+
+module.exports = View;
 
 
 /***/ })
