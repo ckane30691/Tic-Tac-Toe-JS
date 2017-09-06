@@ -1,27 +1,46 @@
-.group:after {
+html, body, figure, figcaption, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: inherit;
+}
+
+body {
+  font-family: Papyrus, fantasy;
+  background-color: #C9A94B;
+}
+
+h1 {
+  text-align: center;
+  font-size: 135px;
+  margin: 0;
 }
 
 .ttt {
   width: 600px;
+  margin: auto;
 }
 
+
+
 ul {
-  /*content: "";
-  display: table;
-  clear: both;*/
   list-style-position:inside;
   display: block;
-  width: 500px;
+  width: 450px;
   white-space: nowrap;
+  border: 5px solid black;
+  margin: auto;
 }
 
 li {
   box-sizing: border-box;
   float: left;
   display: block;
-  width: 200px;
-  height: 200px;
-  border: 10px solid black;
+  width: 150px;
+  height: 150px;
+  border: 5px solid black;
+  margin: auto;
 }
 
 li:hover {
@@ -32,16 +51,32 @@ li:hover {
   background-color: gray;
 }
 
-.selected_x:before {
-  background-color: white;
+.selected_x:after {
   content: "x";
-  font-size: 48;
   color: red;
 }
 
-.selected_o:before {
-  background-color: white;
+.selected_x:after, .selected_o:after {
+  font-size: 200px;
+  display: block;
+  width: 100%;
+  line-height: 160px;
+  text-align: center;
+}
+
+.selected_o:after {
   content: "o";
-  font-size: 48;
   color: green;
+
+}
+
+figcaption {
+  font-size: 100px;
+  text-align: center;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }

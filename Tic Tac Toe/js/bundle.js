@@ -112,7 +112,10 @@ class View {
       game.playMove(pos);
       this.makeMove($(event.currentTarget), game);
       if (game.board.winner()) {
-        $(".ttt").append(`${game.currentPlayer.toUpperCase()} WINS!`);
+        $(".ttt").append(`<figcaption>${game.currentPlayer.toUpperCase()} WINS!</figcaption>`);
+      }
+      if (game.board.isOver() && (!game.board.winner())) {
+        $(".ttt").append(`<figcaption>Cat's game!</figcaption>`);
       }
       // event.currentTarget.css("background-color: green");
     });
@@ -129,15 +132,15 @@ class View {
   }
 
   setupBoard($el) {
-    const board = $el.append($('<ul></ul>'));
-
+    const $ul = $('<ul class="group">');
     for (var i = 0; i < 3; i++) {
       for (var j = 0; j < 3; j++) {
         let $myLi = $('<li class="cell not_selected"></li>');
         $myLi.data("pos", [i,j]);
-        board.append($myLi);
+        $ul.append($myLi);
       }
     }
+    const board = $el.append($ul);
   }
 }
 
