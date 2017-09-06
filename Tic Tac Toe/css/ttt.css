@@ -27,14 +27,15 @@ h1 {
 ul {
   list-style-position:inside;
   display: block;
-  width: 450px;
+  width: 480px;
   white-space: nowrap;
   border: 5px solid black;
   margin: auto;
+  background: #EDE398 none;
 }
 
 li {
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
   float: left;
   display: block;
   width: 150px;
@@ -48,7 +49,7 @@ li:hover {
 }
 
 .not_selected {
-  background-color: gray;
+  background-color: #C9A94B;
 }
 
 .selected_x:after {
